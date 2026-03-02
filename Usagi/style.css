@@ -1,0 +1,210 @@
+.title-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    gap: 25px;
+    padding: 20px 25px;
+    background-color: #fff1c1;   
+    border-radius: 80px;          
+    box-shadow: 0 8px 0 #e0b87b; 
+    border: 3px solid #fcd48c;
+    margin-bottom: 30px;
+}
+
+.header-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 40% 60% 40% 60% / 60% 40% 60% 40%; 
+    object-fit: cover;
+    border: 5px solid #ffe39c;
+    box-shadow: 0 6px 0 #d4a15a;
+    transition: transform 0.2s;
+}
+
+.header-img:hover {
+    transform: rotate(5deg) scale(1.05);
+}
+
+h1 {
+    font-size: 3rem;
+    color: #c45d2c;             
+    text-shadow: 3px 3px 0 #ffd966;
+    margin: 0;
+    letter-spacing: 2px;
+    background: #fff0b5;
+    padding: 0 25px;
+    border-radius: 60px;
+    line-height: 1.4;
+    border: 3px solid #ffb882;
+    box-shadow: inset 0 -3px 0 #f1c78c;
+}
+/* ===== 全局样式 ===== */
+body {
+    background-color: #fff9e6;        /* 奶油黄背景 */
+    font-family: 'Quicksand', 'Segoe UI', sans-serif;
+    color: #5e3a1f;                   /* 统一深棕色文字 */
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* ===== h2 样式：左侧小图片 + 背景色块 ===== */
+h2 {
+    display: inline-block;             /* 让背景只包住内容 */
+    background-color: #ffec9e;         /* 浅橘黄色背景 */
+    color: #b45f2a;                    /* 深橘色文字 */
+    padding: 8px 25px 8px 70px;        /* 左侧留出更多空间给图片 */
+    border-radius: 50px;                /* 圆角 */
+    font-size: 2rem;
+    margin: 30px 0 15px 0;
+    border: 2px solid #fcc169;
+    box-shadow: 0 5px 0 #e0a96d;
+    position: relative;                 /* 让伪元素图片可以绝对定位 */
+}
+
+/* 用和大标题一样的图片作为左侧图标 */
+h2::before {
+    content: '';
+    position: absolute;
+    left: 15px;                         /* 与左边框的距离 */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;                         /* 图片宽度，可稍调 */
+    height: 45px;                        /* 图片高度 */
+    background-image: url('images/v2-4de3380e99663ddcf3f18c6be5b9377c_1440w.webp'); /* 你的图片路径 */
+    background-size: cover;
+    background-position: center;
+    border-radius: 40% 60% 40% 60% / 60% 40% 60% 40%;  /* 和大标题图片一样的不规则圆角 */
+    border: 5px solid #ffe39c;            /* 边框颜色与大标题一致 */
+    box-shadow: 0 6px 0 #d4a15a;          /* 底部阴影与大标题一致 */
+    transition: transform 0.2s;
+}
+
+/* 鼠标悬停时图片微微旋转放大（和大标题图片悬停效果一致） */
+h2:hover::before {
+    transform: translateY(-50%) rotate(5deg) scale(1.05);
+}
+
+/* ===== h3 样式 ===== */
+h3 {
+    color: #b45f2a;
+    font-size: 1.6rem;
+    margin: 20px 0 8px 0;
+    padding-left: 15px;
+    border-left: 8px solid #fcd48c;
+}
+
+/* ===== 段落样式 ===== */
+p {
+    background-color: #fffae6;
+    padding: 12px 20px;
+    border-radius: 40px;
+    border: 2px solid #fedc9c;
+    box-shadow: inset 0 2px 5px #fff2c1;
+    font-size: 1.2rem;
+    color: #5e3a1f;
+}
+
+/* ===== 列表样式（ul 和 ol）===== */
+ul, ol {
+    background-color: #fff5d6;
+    padding: 20px 30px 20px 50px;
+    border-radius: 40px;
+    border: 2px solid #fdd99c;
+    box-shadow: 0 3px 0 #e0b87b;
+}
+
+li {
+    margin: 8px 0;
+    font-size: 1.2rem;
+    color: #5e3a1f;
+}
+
+/* ===== 链接样式 ===== */
+a {
+    color: #c45d2c;
+    background-color: #ffecb3;
+    text-decoration: none;
+    padding: 5px 15px;
+    border-radius: 40px;
+    border: 2px solid #febf7e;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+a:hover {
+    background-color: #fdcd8a;
+    color: #fff;
+    border-color: #e09e5e;
+}
+
+/* ===== 前四张图片 (image1 ~ image4) 基础样式 ===== */
+.image1, .image2, .image3, .image4 {
+    border-radius: 30px;
+    border: 6px solid #ffe39c;
+    box-shadow: 0 8px 0 #d4a15a, 0 10px 20px rgba(255, 180, 70, 0.3);
+    margin: 10px;
+    transition: transform 0.3s;
+}
+
+.image1:hover, .image2:hover, .image3:hover, .image4:hover {
+    transform: scale(1.02);
+}
+
+/* ===== 最后五张图片 (image5 ~ image9) 特殊悬停效果 ===== */
+.image5, .image6, .image7, .image8, .image9 {
+    border-radius: 25px;
+    border: 5px solid #fccb8c;
+    box-shadow: 0 8px 0 #d4a15a;
+    margin: 12px;
+    transition: all 0.4s ease;
+    display: inline-block;   /* 让它们排成一行 */
+    vertical-align: middle;
+    object-fit: cover;       /* 防止图片变形 */
+}
+
+/* 不同图片不同悬停效果 */
+.image5:hover {
+    filter: grayscale(80%);          /* 变灰 */
+    border-radius: 50%;              /* 变成圆形 */
+    transform: rotate(2deg) scale(1.05);
+}
+
+.image6:hover {
+    filter: blur(2px) brightness(1.1); /* 模糊+变亮 */
+    border-radius: 30% 70% / 70% 30%;  /* 异形圆角 */
+    opacity: 0.9;
+}
+
+.image7:hover {
+    filter: sepia(50%) contrast(1.2);  /* 复古色调 */
+    border-radius: 20px 60px 20px 60px;
+    transform: scale(1.1) translateY(-5px);
+}
+
+.image8:hover {
+    opacity: 0.7;                       /* 半透明 */
+    filter: drop-shadow(0 0 10px #fbcb6e);
+    border-radius: 10px 40px 10px 40px;
+    border-color: #faa75e;
+}
+
+.image9:hover {
+    filter: brightness(1.2) saturate(1.5); /* 鲜艳 */
+    border-radius: 60% 40% 40% 60% / 60% 60% 40% 40%;
+    transform: scale(0.95) rotate(-1deg);
+}
+
+/* ===== 视频 iframe 样式 ===== */
+iframe {
+    border-radius: 40px;
+    border: 8px solid #ffe39c;
+    box-shadow: 0 12px 0 #d4a15a, 0 15px 25px #ffdcaa;
+    max-width: 100%;
+    margin: 20px 0;
+}
+
+/* ===== 辅助调整 ===== */
+img {
+    vertical-align: middle;
+}
